@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model='msg'>
+  <div>{{msg | upper}}</div>
+  <div>{{msg | upper | lower}}</div>
+  <div :abc='msg | upper'>测试数据</div>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+  /*
+    过滤器：用于一些常见的文本格式化
+    1、可以用与插值表达式和属性绑定
+    2、支持级联操作
+    3、过滤器不改变真正的 data ，而只是改变渲染的结果，并返回过滤后的版本
+  */
+
+  // 全局注册 使用的是 filter
+  // 定义的 lower 为全局过滤器
+  Vue.filter('lower', function(val) {
+    return val.charAt(0).toLowerCase() + val.slice(1);
+  });
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      msg: ''
+    },
+    // 局部注册
+    filters: {
+      upper: function(val) {
+        // 过滤器中一定要有返回值,这样使用才能拿到结果
+        return val.charAt(0).toUpperCase() + val.slice(1);
+      }
+    }
+  });
+</script>
+</body>
+</html>
