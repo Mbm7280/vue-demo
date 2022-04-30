@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+</head>
+<body>
+<!--
+    v-html指令用于将HTML片段填充到标签中
+-->
+<div id="app">
+    <div v-html="msg"></div>
+    <div v-html="msg1"></div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      msg: 'HelloWorld',
+      msg1:'<h1>Echo</h1>'
+    }
+  });
+</script>
+</html>

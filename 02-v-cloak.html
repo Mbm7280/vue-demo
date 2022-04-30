@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-cloak</title>
+    <style type="text/css">
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--
+        在 数据渲染完场之后，v-cloak 属性会被自动去除，
+        对应的标签会变为可见
+        可以解决闪动问题
+       -->
+    <div v-cloak>{{msg}}</div>
+</div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'HelloWorld'
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-show</title>
+</head>
+<body>
+<div id="app">
+    <!--
+       v-show 指令通过改变元素的 css 属性（display）来决定元素是显示还是隐藏。
+   -->
+    <p v-show="type==='1'">Echo</p>
+    <p v-show="type==='2'">Andy</p>
+</div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      type: '1'
+    }
+  });
+</script>
+</html>

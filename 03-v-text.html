@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-text</title>
+</head>
+<body>
+<div id="app">
+    <!--
+        v-text指令用于将数据填充到标签中，作用于插值表达式类似，但是没有闪动问题
+    -->
+    <div v-text="msg"></div>
+</div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'HelloWorld'
+        }
+    });
+</script>
+</html>
