@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <!--
+      k 代表 key
+      v 代表 value
+      i 代表 index
+    -->
+  <div v-if='k=="uname"' v-for='(v,k,i) in obj'>{{v + '---' + k + '---' + i}}</div>
+  <div v-if='v==13' v-for='(v,k,i) in obj'>{{v + '---' + k + '---' + i}}</div>
+  <div v-if='i==2' v-for='(v,k,i) in obj'>{{v + '---' + k + '---' + i}}</div>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+  /*
+    循环结构-遍历对象
+  */
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      obj: {
+        uname: 'zhangsan',
+        age: 13,
+        gender: 'female'
+      }
+    }
+  });
+</script>
+</body>
+</html>
